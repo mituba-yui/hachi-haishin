@@ -4,6 +4,7 @@
         <script src="jquery-1.8.2.min.js"></script>
         <script src="garlic.js"></script>
     </head>
+    <title>モデレーターの心得</title>
     <meta charset="UTF-8">
     <body>
         <form>
@@ -28,23 +29,74 @@
         <form>
            <h1>例文</h1>
            <h2>通常配信</h2>
-           <h4>
+           <h4><span id="reibun1">
             【定期】初見さんいらっしゃい🍯！<br>
             連投コメントなどはミュート対象になります🍰<br>
             良かったらフォローやいいねしていってください！
-           </h4>
-           <h4>
+           </h4></span><br>
+           <input type="button" onclick="copy1" value="コピー">
+           <h4><span id="reibun2">
             【定期】初見さんいらっしゃい🍯！<br>
             連投コメントなどはミュート対象になります🍰<br>
-            フォロワーN人を目標にしています🧊ゆっくりしていってください！
-           </h4>
+            フォロワーN人を目標にしています🧊<br>
+            ゆっくりしていってください！
+           </h4></span><br>
+           <input type="button" onclick="copy2" value="コピー">
            <h2>サバイバル参加型</h2>
-           <h4>
+           <h4><span id="reibun3">
             【定期】初見せんいらっしゃい🍯！<br>
             今はサバイバルの参加型をやっています👾！<br>
             参加条件はサブスク登録かメンバーレベル10です！<br>
             参加出来なくてもコメントなどしてくれると嬉しいです！
-           </h4>
+           </h4></span><br>
+           <input type="button" onclick="copy3" value="コピー">
+           <script>
+               function copy1(){
+                            //範囲を指定
+                            let range = document.createRange();
+                            let span = document.getElementById('reibun1');
+                            range.selectNodeContents(span);
+
+                            //指定した範囲を選択状態にする
+                            let selection = window.getSelection();
+                            selection.removeAllRanges();
+                            selection.addRange(range);
+
+                            //コピー
+                            document.execCommand('copy');
+                            alert('コピーしました');
+                    }
+               function copy2(){
+                            //範囲を指定
+                            let range = document.createRange();
+                            let span = document.getElementById('reibun2');
+                            range.selectNodeContents(span);
+
+                            //指定した範囲を選択状態にする
+                            let selection = window.getSelection();
+                            selection.removeAllRanges();
+                            selection.addRange(range);
+
+                            //コピー
+                            document.execCommand('copy');
+                            alert('コピーしました');
+                    }
+               function copy3(){
+                            //範囲を指定
+                            let range = document.createRange();
+                            let span = document.getElementById('reibun3');
+                            range.selectNodeContents(span);
+
+                            //指定した範囲を選択状態にする
+                            let selection = window.getSelection();
+                            selection.removeAllRanges();
+                            selection.addRange(range);
+
+                            //コピー
+                            document.execCommand('copy');
+                            alert('コピーしました');
+                    }
+           </script>
         </form><br><br>
         <form>
             <h1>定期分文作成注意点</h1>

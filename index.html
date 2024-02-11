@@ -111,6 +111,30 @@
                    window.getSelection().removeAllRanges()
                     }
            </script>
+           <h2>放置中</h2>
+           <h4><span id="houti1">
+            【定期】主は今離籍中です！<br>
+            よかったら戻ってくるまでゆっくりしていってください！
+           </h4></span><br>
+           <input type="button" onclick="copy4()" value="コピー">
+           <script>
+               function copy4(){
+                            //範囲を指定
+                            let range = document.createRange();
+                            let span = document.getElementById('houti1');
+                            range.selectNodeContents(span);
+
+                            //指定した範囲を選択状態にする
+                            let selection = window.getSelection();
+                            selection.removeAllRanges();
+                            selection.addRange(range);
+
+                            //コピー
+                            document.execCommand('copy');
+                            alert('コピーしました');
+                   window.getSelection().removeAllRanges()
+                    }
+           </script>
         </form><br><br>
         <form>
             <h1>定期分文作成注意点</h1>
